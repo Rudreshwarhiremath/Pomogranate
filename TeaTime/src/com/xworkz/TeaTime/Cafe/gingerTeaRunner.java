@@ -5,6 +5,10 @@ public class gingerTeaRunner {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
          new gingerTea();
+         new gingerTea();
+         new gingerTea();
+         new gingerTea();
+         new gingerTea();
 	}
 
 }

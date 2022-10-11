@@ -5,6 +5,10 @@ public class normalTea {
 	public static void main(String[] args) {
 		new normalTea();
 		// TODO Auto-generated method stub
+		new normalTea();
+		new normalTea();
+		new normalTea();
+		
 
 	}
 

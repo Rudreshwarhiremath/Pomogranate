@@ -1,6 +1,7 @@
 package com.xworkz.TeaTime.Costal;
 
 public class Bread {
+<<<<<<< HEAD
 	public String type;
 	public String shape;
 	public int price;
@@ -60,5 +61,7 @@ public class Bread {
 		this.companyname = companyname;
 
 	}
+=======
+>>>>>>> d8ffb78db7bdac5b347140eb4e7fdb57999d72d4
 
 }

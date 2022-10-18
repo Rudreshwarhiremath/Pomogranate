@@ -1,4 +1,4 @@
-package com.Xworkz.FarmingJava;
+package com.xworkz.FarmingJava;
 
 public class FarmingJavaRunner {
 

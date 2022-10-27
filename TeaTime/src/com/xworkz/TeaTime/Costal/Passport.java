@@ -1,7 +1,6 @@
 package com.xworkz.TeaTime.Costal;
 
 public class Passport {
-<<<<<<< HEAD
 	public long number;
 	public String name;
 	public String expiryDate;
@@ -51,7 +50,5 @@ public class Passport {
 		this.number = number;
 
 	}
-=======
->>>>>>> d8ffb78db7bdac5b347140eb4e7fdb57999d72d4
 
 }

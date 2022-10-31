@@ -28,7 +28,7 @@ public class Country {
 		if (cities != null) {
 			for (int i = 0; i < cities.length; i++) {
 				City element = this.cities[i];
-				//System.out.println(element);
+				System.out.println(element);
 				if (element != null) {
 					element.show();
 				} else {

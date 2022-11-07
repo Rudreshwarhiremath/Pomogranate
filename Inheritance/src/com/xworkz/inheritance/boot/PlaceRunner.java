@@ -70,6 +70,9 @@ public class PlaceRunner {
 
 		place1.set();
 		System.out.println(">>>>>>>>>>>>>");
+		System.out.println("$$$$$$$$$$$$$$$$$$");
+		ben1.showoff();
+		System.out.println("$$$$$$$$$$$$$$$$$$");
 
 	}
 

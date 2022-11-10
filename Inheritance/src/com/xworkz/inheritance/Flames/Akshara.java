@@ -8,6 +8,7 @@ public class Akshara extends HR {
 		this.bikename = bikename;
 	}
 
+	@Override
 	public void hire() {
 		super.hire();
 		System.out.println(bikename);

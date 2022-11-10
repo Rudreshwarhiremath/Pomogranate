@@ -8,6 +8,7 @@ public class PG extends Home {
 		this.price = price;
 	}
 
+	@Override
 	public void show() {
 		super.show();
 		System.out.println(price);

@@ -12,7 +12,7 @@ import com.xworkz.Association.things.Email;
 public class PersonRunner {
 
 	public static void main(String[] args) {
-		Person pet = new Person("Pradeep");
+		Person person = new Person("Pradeep");
 		Job job = new Job(100000, "Software", 2);
 		Company comp = new Company("Xworkz", "Omsir");
 		Nation nation = new Nation("Bharath", "Dehali", 1300000, +91);
@@ -22,18 +22,19 @@ public class PersonRunner {
 		locate.setCity(city, state, nation);
 		comp.setLocation(locate);
 		job.setCompany(comp);
-		pet.setJob(job);
-		Email  email1=new Email("Xworkz@gmail.com","@bstractClass",8888888888L);
+		person.setJob(job);
+		Email email1 = new Email("Xworkz@gmail.com", "@bstractClass", 8888888888L);
 		email1.setCompany(comp);
-		Email  email2=new Email("Pradeep@gmail.com","@1234",5555555555L);
+		Email email2 = new Email("Pradeep@gmail.com", "@1234", 5555555555L);
 		email2.setCompany(comp);
-		Email  email3=new Email("wings@gmail.com","@5678",9999999999L);
+		Email email3 = new Email("wings@gmail.com", "@5678", 9999999999L);
 		email3.setCompany(comp);
-		Email  email4=new Email("hp@gmail.com","@910000",6666666666L);
+		Email email4 = new Email("hp@gmail.com", "@910000", 6666666666L);
 		email4.setCompany(comp);
-		Email[] strong= {email1,email2,email3,email4};
-		pet.setEmails(strong);
-		pet.display();
+		Email[] strong = { email1, email2, email3, email4 };
+		person.setEmails(strong);
+		// email1.setCompany(comp);
+		person.display();
 
 	}
 

@@ -3,8 +3,7 @@ package com.xworkz.encapsulation.things;
 public class Oilpack {
 	Oil pack = new Oil();
 
-	public void show() {
-
+	public void show() { 
 		pack.setRate(120);
 		pack.setType(6);
 		pack.setLiters(15);

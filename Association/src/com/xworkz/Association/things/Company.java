@@ -11,8 +11,8 @@ public class Company {
 		this.ownerName = ownerName;
 	}
 
-	public void setLocation(Location location) {
-		this.location = location;
+	 public void setLocation(Location location) {
+		 this.location=location;
 	}
 
 	public void show() {

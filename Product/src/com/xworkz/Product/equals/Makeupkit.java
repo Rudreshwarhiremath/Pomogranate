@@ -9,11 +9,11 @@ public class Makeupkit {
 	private String location;
 	private String mallname;
 	private String otherthing;
-	private String totalcost;
+	private double totalcost;
 	private String parlerName;
 
 	public Makeupkit(String brand, String name, String type, String price, String quality, String location,
-			String mallname, String otherthing, String totalcost, String parlerName) {
+			String mallname, String otherthing, double totalcost, String parlerName) {
 		super();
 		this.brand = brand;
 		this.name = name;
@@ -38,15 +38,18 @@ public class Makeupkit {
 	public boolean equals(Object others) {
 		if (others instanceof Makeupkit) {
 			Makeupkit casted = (Makeupkit) others;
-			if (this.brand.equals(casted.brand) && (this.location.equals(casted.location) && (this.mallname
-					.equals(casted.mallname)
-					&& (this.name.equals(casted.name) && (this.otherthing.equals(casted.otherthing) && (this.parlerName
-							.equals(casted.parlerName)
-							&& (this.price.equals(casted.price) && (this.quality.equals(casted.quality))))))))) {
+			if (this.brand.equals(casted.brand) && 
+				(this.location.equals(casted.location) && 
+				(this.mallname.equals(casted.mallname)&& 
+				(this.name.equals(casted.name) &&
+				(this.otherthing.equals(casted.otherthing) && 
+				(this.parlerName.equals(casted.parlerName)&&
+				(this.price.equals(casted.price) &&
+				(this.quality.equals(casted.quality))))))))) {
 				return true;
 
 			} else {
-				System.out.println("plz check");
+				System.err.println("plz check");
 			}
 			return false;
 		}
@@ -117,11 +120,11 @@ public class Makeupkit {
 		this.otherthing = otherthing;
 	}
 
-	public String getTotalcost() {
+	public double getTotalcost() {
 		return totalcost;
 	}
 
-	public void setTotalcost(String totalcost) {
+	public void setTotalcost(double totalcost) {
 		this.totalcost = totalcost;
 	}
 

@@ -40,12 +40,12 @@ public class Vehicle {
 		if (others instanceof Vehicle) {
 			System.out.println("Others is Vehicle can check");
 			Vehicle casted = (Vehicle) others;
-			if (this.brand.equals(casted.brand) && (this.location.equals(casted.location))) {
+			if (this.brand.equals(casted.brand) && (this.owner.equals(casted.owner))) {
 				System.out.println("Both are same");
 				return true;
 			
 		} else {
-			System.out.println("Canot match");
+			System.err.println("Canot match");
 			
 		}return false;
 		

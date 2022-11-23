@@ -43,7 +43,7 @@ public class Hospitel {
 							&& (this.name.equals(casted.name) && (this.noOfDoctors.equals(casted.noOfDoctors)))))))) {
 				return true;
 			} else {
-				System.out.println("Plz check the values");
+				System.err.println("Plz check the values");
 			}
 			return false;
 		}

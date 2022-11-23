@@ -44,10 +44,10 @@ public class Paint {
 			System.out.println("other is paint can check");
 			Paint casted = (Paint) other;
 			if (this.brand.equals(casted.brand)) {
-				System.out.println("Name is same");
+				System.out.println("brand is same");
 				return true;
 			} else {
-				System.err.println("Other is not paiint canot check the properties");
+				System.err.println("Other is not paint canot check the properties");
 			}
 			return false;
 		}

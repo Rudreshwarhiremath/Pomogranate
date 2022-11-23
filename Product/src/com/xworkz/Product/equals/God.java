@@ -45,7 +45,7 @@ public class God {
 				System.out.println("all ok");
 				return true;
 			} else {
-				System.out.println("not all ok");
+				System.err.println("not all ok");
 			}
 			return false;
 		}

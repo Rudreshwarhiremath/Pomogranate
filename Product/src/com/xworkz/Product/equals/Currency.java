@@ -44,7 +44,7 @@ public class Currency {
 				System.out.println("Condition is true");
 				return true;
 			} else {
-				System.out.println("Condition is false");
+				System.err.println("Condition is false");
 			}
 			return false;
 		}

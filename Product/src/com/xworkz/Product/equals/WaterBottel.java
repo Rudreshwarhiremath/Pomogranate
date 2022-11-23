@@ -44,7 +44,7 @@ public class WaterBottel {
 				System.out.println("its true can continue");
 				return true;
 			} else {
-			System.out.println("not matching come out");
+			System.err.println("not matching come out");
 		}
 		return false;
 	}return false;

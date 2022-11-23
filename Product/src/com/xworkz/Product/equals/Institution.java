@@ -11,6 +11,9 @@ public class Institution {
 	private String age;
 	private String earning;
 	private String strength;
+	
+	public Institution() {
+		System.out.println("default constructor of institution");	}
 
 	public Institution(String name, String type, String location, String dist, String state, String trustName,
 			String owner, String age, String earning, String strength) {
@@ -43,7 +46,7 @@ public class Institution {
 							&& (this.location.equals(casted.location) && (this.name.equals(casted.name))))))) {
 				return true;
 			} else {
-				System.out.println("Not all ok plz check");
+				System.err.println("Not all ok plz check");
 			}
 			return false;
 		}
@@ -130,4 +133,5 @@ public class Institution {
 		this.strength = strength;
 	}
 
+	
 }

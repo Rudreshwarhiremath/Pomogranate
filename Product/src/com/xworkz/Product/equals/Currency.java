@@ -33,12 +33,12 @@ public class Currency {
 				+ ", name1=" + name1 + ", value1=" + value1 + ", country2=" + country2 + ", name2=" + name2
 				+ ", value2=" + value2 + ", indianRuppe=" + indianRuppe + "]";
 	}
-
+//this.price==casted.price
 	@Override
 	public boolean equals(Object others) {
-		if (others instanceof Currency) {
+		if (others instanceof Currency) { 
 			System.out.println("Check the same properties");
-			Currency casted = (Currency) others;
+			Currency casted = (Currency) others; //casting
 			if (this.country.equals(casted.country) && (this.name.equals(casted.name)
 					&& (this.country1.equals(casted.country1) && (this.name1.equals(casted.name1))))) {
 				System.out.println("Condition is true");
@@ -129,6 +129,10 @@ public class Currency {
 
 	public void setIndianRuppe(double indianRuppe) {
 		this.indianRuppe = indianRuppe;
+	}
+	
+	public void display() {
+		System.out.println(this.value);
 	}
 
 }

@@ -28,6 +28,7 @@ public class PaintRunner {
 		System.out.println(paint1);
 		boolean same=paint.equals(paint1);
 		System.out.println(same);
+		System.out.println(paint1.hashCode());
 		paint=paint1;
 		boolean same14=paint.equals(paint1);
 		System.out.println(same14);

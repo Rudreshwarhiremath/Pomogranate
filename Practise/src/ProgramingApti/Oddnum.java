@@ -1,4 +1,4 @@
-package com.xworkz.FarmingJava.Bornvita;
+package ProgramingApti;
 
 public class Oddnum {
 public static void even( ) {

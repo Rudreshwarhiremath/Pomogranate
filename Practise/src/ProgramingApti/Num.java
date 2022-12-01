@@ -1,4 +1,4 @@
-package com.xworkz.FarmingJava.boost;
+package ProgramingApti;
 
 public class Num {
 	

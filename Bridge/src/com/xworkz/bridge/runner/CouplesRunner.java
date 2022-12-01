@@ -6,13 +6,13 @@ public class CouplesRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Couples get=new Couples();
+		Couples get = new Couples();
 		get.age();
-		get.couples();
+
 		get.parentsAgree();
 		get.shopping();
 		get.satisfy();
-		
+		System.out.println(get.couples());
 
 	}
 

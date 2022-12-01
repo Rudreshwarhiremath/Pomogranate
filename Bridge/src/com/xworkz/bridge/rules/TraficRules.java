@@ -1,6 +1,6 @@
 package com.xworkz.bridge.rules;
 
-public interface TraficRules {
+public interface TraficRules  {
 	boolean takeRight();
 	boolean gostright();
 	boolean noUturn();

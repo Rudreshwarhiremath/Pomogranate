@@ -3,7 +3,7 @@ package com.xworkz.Product.StringMethods;
 public class PrimierPadmini {
 	public static void main(String[] args) {
 
-		String trippleRide = "Triple Riding is a Kannada movie released on 25 Nov, 2022. The movie is directed by Mahesh Gowda and featured Aditi Prabhudeva, Rachana Inder, Sadhu Kokila and Rangayana Raghu as lead characters";
+		String trippleRide = "Triple Riding is a Kannada movie released on madam 25 Nov, 2022. The movie is directed by Mahesh Gowda and featured Aditi Prabhudeva, Rachana Inder, Sadhu Kokila and Rangayana Raghu as lead characters";
 		System.out.println(trippleRide.length());
 		System.out.println("(1)Split by ,");
 		String[] splitstament = trippleRide.split(",");
@@ -108,7 +108,7 @@ public class PrimierPadmini {
 			for (int j = 0; j < palindrome1.length; j++) {
 				// System.out.println(palindrome1[j]);
 				// if(palindrome[i]==palindrome1[j]) {
-				StringBuilder str1 = new StringBuilder(palindrome1[j]);
+				StringBuffer str1 = new StringBuffer(palindrome1[j]);
 				str1.reverse();
 				String rev = str1.toString();
 				if (str1.equals(rev)) {

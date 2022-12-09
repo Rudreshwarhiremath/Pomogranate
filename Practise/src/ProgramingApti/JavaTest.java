@@ -42,8 +42,8 @@ public class JavaTest {//on dec 9-12-2011
 			}
 		}
 		System.out.println(System.lineSeparator());
-		int b[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int c[] = { 7, 8, 9, 10, 11, 12, 13 };
+		int b[] = { 2,3,4,5,6,7 };
+		int c[] = { 2,3,6,7,9,10 };
 
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < c.length; j++) {

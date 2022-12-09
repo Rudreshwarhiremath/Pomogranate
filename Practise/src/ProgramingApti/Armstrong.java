@@ -8,16 +8,22 @@ public class Armstrong {
 		for (; n != 0; n = n / 10) {
 			run = n % 10;
 			reve = reve * 10 + run;
-			temp = run * run * run;
+			//temp = math.pow
 			count++;
 			sum1^=temp;
-			System.out.println(reve);
-			System.out.println(sum1);
+			//System.out.println(reve);
+			//System.out.println(sum1);
 			sum = sum + temp;
 		}
 		//System.out.println(temp);
-		System.out.println("sum is:" + sum);
-		System.out.println("count:" + count);
+		//if(n==sum) {
+			System.out.println("it is a armstrong no");
+			System.out.println("sum is:" + sum);
+		//else {
+			System.out.println("it is not a armstrong no");
+		//}
+		
+		//System.out.println("count:" + count);
 		//System.out.println("Reverse:" + reve);
 
 	}

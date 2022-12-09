@@ -16,8 +16,19 @@ public class Whitespace {
 		}System.out.println(count+"-total white space");
 		
 		String value ="om sai ram";
-		value=value.replaceAll(" ","");
-		System.out.println(value);
+		String use="";
+		int var=0;
+		//value=value.replaceAll(" ","");
+		//System.out.println(value);
+		for(char ch:value.toCharArray()){
+			if(ch==' ') {
+				var+=1;
+			}else {
+				use+=ch;
+			}
+			
+		}System.out.println(use);
+		System.out.println(var);
 
 	}
 

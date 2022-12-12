@@ -1,6 +1,6 @@
 package ProgramingApti;
 
-public class JavaTest {//on dec 9-12-2011
+public class JavaTest {// on dec 9-12-2011
 
 	public static void main(String[] args) {
 		String input = "Be yourself; everyone else is taken.";
@@ -14,6 +14,7 @@ public class JavaTest {//on dec 9-12-2011
 			}
 			System.out.print(var[i] + " ");
 		}
+		//System.out.println(input);
 		System.out.println(System.lineSeparator());
 		for (int i = 1; i <= 6; i++) {
 			for (int j = 1; j <= 7; j++) {
@@ -42,8 +43,8 @@ public class JavaTest {//on dec 9-12-2011
 			}
 		}
 		System.out.println(System.lineSeparator());
-		int b[] = { 2,3,4,5,6,7 };
-		int c[] = { 2,3,6,7,9,10 };
+		int b[] = { 2, 3, 4, 5, 6, 7 };
+		int c[] = { 2, 3, 6, 7, 9, 10 };
 
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < c.length; j++) {

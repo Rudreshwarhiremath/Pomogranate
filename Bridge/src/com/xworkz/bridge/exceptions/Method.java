@@ -56,7 +56,7 @@ public class Method {
 	}
 
 	public void event2() {
-		System.out.println("Running event AnnotationTypeMismatchException");
+		System.out.println("Running event+ AnnotationTypeMismatchException");
 		throw new AnnotationTypeMismatchException(null, null);
 	}
 

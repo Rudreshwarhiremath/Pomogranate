@@ -1,13 +1,26 @@
 package com.xworkz.bridge.boot;
 
+import java.lang.annotation.AnnotationTypeMismatchException;
+
 import com.xworkz.bridge.exceptions.Method;
 
 public class MethodRunner {
 
 	public static void main(String[] args) throws Exception {
 		Method met = new Method();
+		try {
+			System.out.println("before");
 		met.event1();
-		met.event2();
+		System.out.println("after");
+		}catch(RuntimeException e) {
+			System.err.println("exception in method1");
+		}
+		try {
+			met.event2();	
+		}catch(AnnotationTypeMismatchException a) {
+			System.out.println("Exception in method 2");
+		}
+		
 		met.event3();
 		met.event4();
 		met.event5();

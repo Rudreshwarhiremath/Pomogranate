@@ -175,10 +175,13 @@ public class IplRunner {
 		iplRepository.create(iplDTO7);
 		iplRepository.create(iplDTO8);
 		iplRepository.create(iplDTO9);
-		iplRepository.create(iplDTO10);
+		//iplRepository.create(iplDTO10);
 		
 		System.out.println(System.lineSeparator());
 		System.out.println("Total-"+iplRepository.total());
+		//iplRepository.foundByTeamName("RCB");
+		System.out.println(iplRepository.foundByTeamName("kkr"));
+		System.out.println(iplRepository.foundByCapitanName("virat kohil")+"total-"+iplRepository.total());
 
 	}
 

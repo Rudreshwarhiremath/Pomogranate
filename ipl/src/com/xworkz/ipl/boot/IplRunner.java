@@ -17,7 +17,7 @@ public class IplRunner {
 		iplDTO.setDefeats(124);
 		iplDTO.setPurse(100);
 		iplDTO.setWins(176);
-		iplDTO.setCreatedBy("Rudra");
+		iplDTO.setCreatedBy("SYSTEM");
 		iplDTO.setCreatedDate(LocalDateTime.now());
 		System.out.println(iplDTO);
 		System.out.println(iplRepository);
@@ -73,7 +73,7 @@ public class IplRunner {
 		iplDTO4.setDefeats(242);
 		iplDTO4.setPurse(200);
 		iplDTO4.setWins(150);
-		iplDTO4.setCreatedBy("Prashant");
+		iplDTO4.setCreatedBy("SYSTEM");
 		iplDTO4.setCreatedDate(LocalDateTime.now());
 		System.out.println(iplDTO4);
 		System.out.println(iplRepository);
@@ -87,7 +87,7 @@ public class IplRunner {
 		iplDTO5.setDefeats(150);
 		iplDTO5.setPurse(160);
 		iplDTO5.setWins(120);
-		iplDTO5.setCreatedBy("Jagadeesh");
+		iplDTO5.setCreatedBy("SYSTEM");
 		iplDTO5.setCreatedDate(LocalDateTime.now());
 		System.out.println(iplDTO5);
 		System.out.println(iplRepository);

@@ -1,6 +1,6 @@
 package com.xworkz.ipl.dto;
 
-public class IplDTO extends AbstractAudiDto {
+public class IplDTO extends AbstractAuditDto {
 	
 	private String teamName;
 	private String capitinName;

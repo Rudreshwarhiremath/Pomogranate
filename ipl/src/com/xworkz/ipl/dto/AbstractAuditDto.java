@@ -3,14 +3,14 @@ package com.xworkz.ipl.dto;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class AbstractAudiDto implements Serializable {
+public abstract class AbstractAuditDto implements Serializable {
 
 	private String createdBy;
 	private LocalDateTime createdDate;
 	private String update;
 	private LocalDateTime updatedDate;
 
-	public AbstractAudiDto() {
+	public AbstractAuditDto() {
 		super();
 	}
 

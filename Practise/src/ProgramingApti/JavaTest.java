@@ -39,7 +39,7 @@ public class JavaTest {// on dec 9-12-2011
 				}
 			}
 			if (count == 1) {
-				System.out.println(a[i]);
+				//System.out.println(a[i]);
 			}
 		}
 		System.out.println(System.lineSeparator());

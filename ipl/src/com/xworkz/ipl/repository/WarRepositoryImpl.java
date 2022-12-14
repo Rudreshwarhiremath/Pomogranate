@@ -63,6 +63,11 @@ public class WarRepositoryImpl implements WarRepository {
 	@Override
 	public WarDto findByDateGreaterThanOREqualTo(LocalDate date) {
 		System.out.println("findByDateGreaterThanOREqualTo is created...");
+		for (WarDto warDto5 : wardto) {
+			if(warDto5!=null && warDto5.getStartdate().isAfter(LocalDateTime.of(10,120,1999, 10, 50))) {
+				  System.out.println(" war dto is found"+wardto);	
+			}
+		}
 		return WarRepository.super.findByDateGreaterThanOREqualTo(date);
 	}
 
@@ -70,6 +75,12 @@ public class WarRepositoryImpl implements WarRepository {
 	@Override
 	public WarDto findByDateLesserThanOREqualTo(LocalDate date) {
 		System.out.println("findByDateLesserThanOREqualTo is created...");
+		for (WarDto warDto6 : wardto) {
+			if(warDto6!=null && warDto6.getStartdate().isBefore(LocalDateTime.of( 0, 0, 0, 0, 0)) ) {
+               System.out.println(" war dto is found"+wardto);				
+			}
+			
+		}
 		return WarRepository.super.findByDateLesserThanOREqualTo(date);
 	}
 

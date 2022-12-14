@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public class WarDto {
 	private String name;
-	private int startdate;
-	private int enddate;
+	private LocalDateTime startdate;
+	private LocalDateTime enddate;
 	private String startedBy;
 	private String startedWith;
 	private String wonBy;
@@ -29,19 +29,19 @@ public class WarDto {
 		this.name = name;
 	}
 
-	public int getStartdate() {
+	public LocalDateTime getStartdate() {
 		return startdate;
 	}
 
-	public void setStartdate(int i) {
+	public void setStartdate(LocalDateTime i) {
 		this.startdate = i;
 	}
 
-	public int getEnddate() {
+	public LocalDateTime getEnddate() {
 		return enddate;
 	}
 
-	public void setEnddate(int i) {
+	public void setEnddate(LocalDateTime i) {
 		this.enddate = i;
 	}
 

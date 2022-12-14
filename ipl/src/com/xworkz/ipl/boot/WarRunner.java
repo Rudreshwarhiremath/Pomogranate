@@ -14,8 +14,8 @@ public class WarRunner {
 		wardto.setName("Kargil war");
 		wardto.setStartedBy("Pakistan");
 		wardto.setStartedWith("Bharath");
-		wardto.setStartdate(12/05/1999);
-		wardto.setEnddate(26/06/1999);
+		wardto.setEnddate(null);
+		wardto.setStartdate(null);
 		wardto.setWonBy("Bharath");
 		warRepository.create(wardto);
 		
@@ -23,8 +23,8 @@ public class WarRunner {
 		wardto1.setName("Ukrine v/s Russia");
 		wardto1.setStartedBy("Russia");
 		wardto1.setStartedWith("ukrine");
-		wardto1.setStartdate(20/02/2022);
-		wardto1.setEnddate(22/12/2022);
+		wardto1.setStartdate(null);
+		wardto1.setEnddate(null);
 		wardto1.setWonBy("Bharath");
 		warRepository.create(wardto1);
 		
@@ -32,8 +32,8 @@ public class WarRunner {
 		wardto2.setName("Seoul War");
 		wardto2.setStartedBy("south koria");
 		wardto2.setStartedWith("North koria");
-		wardto2.setStartdate(15/10/1965);
-		wardto2.setEnddate(15/11/1965);
+		wardto2.setStartdate(null);
+		wardto2.setEnddate(null);
 		wardto2.setWonBy("Koria");
 		warRepository.create(wardto2);
 		
@@ -41,8 +41,8 @@ public class WarRunner {
 		wardto3.setName("IndoChina War");
 		wardto3.setStartedBy("India");
 		wardto3.setStartedWith("China");
-		wardto3.setStartdate(14/04/1962);
-		wardto3.setEnddate(15/05/1962);
+		wardto3.setStartdate(null);
+		wardto3.setEnddate(null);
 		wardto3.setWonBy("Bharath");
 		warRepository.create(wardto3);
 		
@@ -50,8 +50,8 @@ public class WarRunner {
 		wardto4.setName("Iran Iraq");
 		wardto4.setStartedBy("Iran");
 		wardto4.setStartedWith("Irak");
-		wardto4.setStartdate(8/8/1970);
-		wardto4.setEnddate(8/9/1970);
+		wardto4.setStartdate(null);
+		wardto4.setEnddate(null);
 		wardto4.setWonBy("Iran");
 		warRepository.create(wardto4);
 		

@@ -14,7 +14,6 @@ public class PizzaRepositeryImpli implements PizzaRepositery {
 		}
 		this.pizzadto[currentIndex] = dto;
 		this.currentIndex++;
-		// TODO Auto-generated method stub
 		return true;
 	}
 

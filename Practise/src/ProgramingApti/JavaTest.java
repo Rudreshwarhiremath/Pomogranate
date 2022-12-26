@@ -4,13 +4,21 @@ public class JavaTest {// on dec 9-12-2011
 
 	public static void main(String[] args) {
 		String input = "Be yourself; everyone else is taken.";
+		System.err.println(input);
 		String[] var = input.split(" ");
 		for (int i = 0; i < var.length; i++) {
-			if (i == 4) {
+			if (i == 4 ) {
 				StringBuffer buff = new StringBuffer(var[4]);
 				buff.reverse();
 				String name = buff.toString();
 				var[4] = name;
+
+			}
+			if(i==3) {
+				StringBuilder build=new StringBuilder(var[3]);
+				build.reverse();
+				String val=build.toString();
+				var[3]=val;
 			}
 			System.out.print(var[i] + " ");
 		}
@@ -39,7 +47,7 @@ public class JavaTest {// on dec 9-12-2011
 				}
 			}
 			if (count == 1) {
-				//System.out.println(a[i]);
+				System.out.println(a[i]);
 			}
 		}
 		System.out.println(System.lineSeparator());

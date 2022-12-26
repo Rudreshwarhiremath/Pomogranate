@@ -12,7 +12,7 @@ public class Foreach {
 				for (int i = 1; i <= count; i++) {
 					System.out.print(cat);
 				}
-						} else if (cat > 'e' && cat <'i') {
+			} else if (cat > 'e' && cat < 'i') {
 				count = 2;
 				for (int j = 1; j <= count; j++) {
 					System.out.print(cat);
@@ -32,7 +32,7 @@ public class Foreach {
 				for (int m = 1; m <= count; m++) {
 					System.out.print(cat);
 				}
-			}else {
+			} else {
 				System.err.print(cat);
 			}
 

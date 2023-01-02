@@ -56,6 +56,7 @@ public class SanitizerRunner {
 		Iterator<SanitizerDTO> sanitize = sanitizercollection.iterator();
 		while (sanitize.hasNext()) {
 			SanitizerDTO dto = sanitize.next();
+			Double[] b = { dto.getPrice() };
 			if (dto.getPrice() > 150D) {
 				System.out.println(dto);
 			}

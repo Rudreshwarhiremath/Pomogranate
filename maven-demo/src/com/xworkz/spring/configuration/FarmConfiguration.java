@@ -17,32 +17,32 @@ public class FarmConfiguration {
 	@Bean
 	public String pomogranet() {
 		System.out.println("created string bean as pomogranet--1");
-		String string=new String();
+		String string=new String("Kesar ");
 		return string;
 		
 	}
 	@Bean
 	public String papya() {
 		System.out.println("created string as papya---2");
-		String string=new String();
+		String string=new String("Taivan 786");
 		return string;
 	}
 	@Bean
 	public String Gova() {
 		System.out.println("created string as Gova---3");
-		String string=new String();
+		String string=new String("Lacknow gold");
 		return string;
 	}
 	@Bean
 	public String CustredApple() {
 		System.out.println("created string as Gova---4");
-		String string=new String();
+		String string=new String("Golden");
 		return string;
 	}
 	@Bean
 	public String Grapes() {
 		System.out.println("created string as Grapes---5");
-		String string=new String();
+		String string=new String("Thamson seedless");
 		return string;
 	}
 	@Bean
@@ -90,7 +90,7 @@ public class FarmConfiguration {
 	@Bean
 	public Double Cost() {
 		System.out.println("created Cost as double---3");
-		Double doub=new Double(40000000D);
+		Double doub=new Double(400000D);
 		return doub;
 	}
 	@Bean
@@ -108,64 +108,64 @@ public class FarmConfiguration {
 	@Bean
 	public StringBuffer  name() {
 		System.out.println("created string buffer as name");
-		StringBuffer buffer=new StringBuffer();
+		StringBuffer buffer=new StringBuffer("name");
 		return buffer;
 	}
 	@Bean
 	public StringBuffer value() {
 		System.out.println("created string buffer as value");
-		StringBuffer buffer=new StringBuffer();
+		StringBuffer buffer=new StringBuffer("value");
 		return buffer;
 	}
 	@Bean
 	public StringBuffer cost() {
 		System.out.println("created string buffer as cost");
-		StringBuffer buffer=new StringBuffer();
+		StringBuffer buffer=new StringBuffer("cost");
 		return buffer;
 	}
 	@Bean
 	public StringBuffer price() {
 		System.out.println("created string buffer as price");
-		StringBuffer buffer=new StringBuffer();
+		StringBuffer buffer=new StringBuffer("price");
 		return buffer;
 	}
 	@Bean
 	public StringBuffer rate() {
 		System.out.println("created string buffer as rate");
-		StringBuffer buffer=new StringBuffer();
+		StringBuffer buffer=new StringBuffer("rate");
 		return buffer;
 	}
 	@Bean
 	public StringBuilder plough() {
 		System.out.println("created string builder as plough");
-		StringBuilder builder=new StringBuilder();
+		StringBuilder builder=new StringBuilder("plough");
 		return builder;
 	}
-	@Bean
+	@Bean("katputli")
 	public StringBuilder cultivater() {
 		System.out.println("created string builder as cultivater");
-		StringBuilder builder=new StringBuilder();
+		StringBuilder builder=new StringBuilder("cultivater");
 		return builder;
 	}
 	@Bean
 	public StringBuilder rotar() {
 		System.out.println("created string builder as rotar");
-		StringBuilder builder=new StringBuilder();
+		StringBuilder builder=new StringBuilder("rotar");
 		return builder;
 	}
 	@Bean
 	public StringBuilder budformer() {
 		System.out.println("created string builder as budformer");
-		StringBuilder builder=new StringBuilder();
+		StringBuilder builder=new StringBuilder("budformer");
 		return builder;
 	}
 	@Bean
 	public StringBuilder seedsower() {
 		System.out.println("created string builder as seedsower");
-		StringBuilder builder=new StringBuilder();
+		StringBuilder builder=new StringBuilder("seedsower");
 		return builder;
 	}
-	@Bean
+	@Bean ("lays")
 	public ArrayList layebrs() {
 		System.out.println("created array list ");
 		ArrayList list=new ArrayList();
@@ -177,7 +177,8 @@ public class FarmConfiguration {
 		System.out.println(list.size());
 		return list;
 	}
-	public Map crops() {
+	@Bean("crops")
+	public Map<String, String> crops() {
 		System.out.println("created map ");
 		Map<String, String> croptypes=new HashMap<String,String>();
 		croptypes.put("Fruits", "Pomogranate");

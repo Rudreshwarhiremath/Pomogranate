@@ -9,7 +9,7 @@ public class Actor {
 	private String langauge;
 	private Integer age;
 
-	public Actor(@Value("Sudeep") String name,@Value("Kannada") String langauge,@Value("36") Integer age) {
+	public Actor(@Value("Sudeep") String name, @Value("Kannada") String langauge, @Value("36") Integer age) {
 		super();
 		this.name = name;
 		this.langauge = langauge;

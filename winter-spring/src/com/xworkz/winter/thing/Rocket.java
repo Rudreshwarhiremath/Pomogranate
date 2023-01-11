@@ -30,5 +30,5 @@ public class Rocket {
 		this.budget = budget;
 		return budget;
 	}
-	
+
 }

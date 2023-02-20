@@ -47,4 +47,23 @@ public class PreamServiceImpl implements PreamService {
 		}
 	}
 
+	@Override
+	public Preamdto findById(int id) {
+		if (id > 0) {
+			PreamEntity preamE = this.preamRepositery.findById(id);
+			if (preamE != null) {
+				System.out.println("Entity is found in service for id" + id);
+				Preamdto pdto = new Preamdto();
+				pdto.setGift(preamE.getGift());
+				pdto.setName(preamE.getName());
+				pdto.setPlace(preamE.getPlace());
+				pdto.setValentineName(preamE.getValentineName());
+				pdto.setId(preamE.getId());
+				return pdto;
+			}
+		}
+		return PreamService.super.findById(id);
+
+	}
+
 }

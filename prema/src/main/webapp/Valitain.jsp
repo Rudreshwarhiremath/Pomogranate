@@ -23,6 +23,7 @@
 				src=" https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="80" height="48" class="d-inline-block align text-top">
 			</a> <a href="index.jsp">Home Page</a>
+			<a href="ValitainSearch.jsp">ValitainSearch Page</a>
 		</div>
 	</nav>
 	<c:forEach items="${errors}" var="e">

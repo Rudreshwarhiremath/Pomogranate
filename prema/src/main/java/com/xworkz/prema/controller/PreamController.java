@@ -12,12 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.prema.dto.Preamdto;
 import com.xworkz.prema.service.PreamService;
 
 @Controller
-@RequestMapping("/valitain")
+@RequestMapping
 public class PreamController {
 	private List<String> places = Arrays.asList("Cubban Park", "BTM", "Lalbagh", "JpNagar", "IndraNagar");
 	private List<String> gifts = Arrays.asList("Chocolate", "Watch", "Sari", "etc.....");
@@ -28,7 +29,7 @@ public class PreamController {
 		System.out.println("Created " + this.getClass().getSimpleName());
 	}
 
-	@GetMapping
+	@GetMapping("/valitain")
 	public String getPrema(Model model) {
 		System.out.println("Running in getmapping");
 		model.addAttribute("place", places);
@@ -36,7 +37,19 @@ public class PreamController {
 		return "Valitain";
 	}
 
-	@PostMapping
+	@GetMapping("/search")
+	public String getSearch(@RequestParam int id, Model model) {
+		System.out.println("Running in getSearch");
+		Preamdto pdto = this.preamService.findById(id);
+		if (pdto != null) {
+			model.addAttribute("dto", pdto);
+		} else {
+			model.addAttribute("mesage", "Do not found ");
+		}
+		return "ValitainSearch";
+	}
+
+	@PostMapping("/valitain")
 	public String getPrema(Model model, Preamdto vdto) {
 		System.out.println("Running in postMapping");
 		System.out.println(vdto);

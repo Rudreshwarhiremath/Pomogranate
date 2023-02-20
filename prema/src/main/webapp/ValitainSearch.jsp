@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,17 +17,28 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg-navbar-Light bg-dark">
+	<nav class="navbar navbar-expand-lg-navbar-Light bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"> <img
 				src=" https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="80" height="48" class="d-inline-block align text-top">
-			</a>
-			<a href="index.jsp">Home Page</a>
-			<a href="ValitainSearch.jsp">ValitainSearch Page</a>
+			</a> <a href="index.jsp">Home Page</a>
 		</div>
 	</nav>
-	
-<h1 style="color: green;">Sucess in valatain </h1>
+	<form action="search" method="get">
+		Search by ID <input type="search" name="id"> <input
+			type="submit" value="Search">
+	</form>
+	<div style="color: purple;">
+		<h1>Result Of searching</h1>
+		<h3>Name: ${dto.name}</h3>
+		<br>
+		<h3>Valentine Name: ${dto.valentineName}</h3>
+		<br>
+		<h3>Place: ${dto.place}</h3>
+		<br>
+		<h3>Gift: ${dto.gift}</h3>
+		<br>
+	</div>
 </body>
 </html>

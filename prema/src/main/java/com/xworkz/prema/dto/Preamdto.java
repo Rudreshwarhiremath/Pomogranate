@@ -7,6 +7,7 @@ import lombok.Data;
 
 @Data
 public class Preamdto {
+	private int id;
 	@Size(min = 3,max = 20,message = "Name must be greaterthan 3 character and less then 20 character")
 	private String name;
 	@Size(min = 3,max = 20,message = "valentineName must be greaterthan 3 character and less then 20 character")

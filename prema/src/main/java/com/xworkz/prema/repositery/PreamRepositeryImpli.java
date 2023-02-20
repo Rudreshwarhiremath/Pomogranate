@@ -30,4 +30,13 @@ public class PreamRepositeryImpli implements PreamRepositery {
 		return true;
 	}
 
+	@Override
+	public PreamEntity findById(int id) {
+		System.out.println("find by id in repo.." + id);
+		EntityManager entitymanager = this.entityManagerFactory.createEntityManager();
+		PreamEntity fromDb=entitymanager.find(PreamEntity.class,id);
+		entitymanager.close();
+		return fromDb;
+	}
+
 }

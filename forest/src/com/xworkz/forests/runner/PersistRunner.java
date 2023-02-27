@@ -27,11 +27,6 @@ public class PersistRunner {
 		ForestEntity fentity9=new ForestEntity(0,"Annekaal","Tamilanadu","BioReservier",14527D);
 		ForestEntity fentity10=new ForestEntity(0,"Nallamala","Kerala","BioConservative",126578D);
 		ForestEntity fentity11=new ForestEntity(0,"Bhavnagar","Goa","BioReservier",142587D);
-		//		fentity.setId(2);
-//		fentity.setName("Bannerughata");
-//		fentity.setState("Karanataka");
-//		fentity.setType("Conservative Forest");
-//		fentity.setArea(545.3D);
 		transaction.begin();
 		manager.persist(fentity2);
 		manager.persist(fentity3);

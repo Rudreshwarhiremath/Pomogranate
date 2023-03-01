@@ -1,6 +1,8 @@
 package com.xworkz.highway.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -69,4 +71,71 @@ public class HighwayserviceImpliment implements Highwayservice {
 		return Highwayservice.super.findById(id);
 	}
 
+	@Override
+	public List<HighwayDTO> findByName(String name) {
+		if (name != null && !name.isEmpty()) {
+			List<HighwayEntity> hentity = this.repositery.findByName(name);
+			List<HighwayDTO> lists = new ArrayList<HighwayDTO>();
+			for (HighwayEntity entity : hentity) {
+				HighwayDTO dto = new HighwayDTO();
+				dto.setDestination(entity.getDestination());
+				dto.setId(entity.getId());
+				dto.setKiloMiter(entity.getKiloMiter());
+				dto.setName(entity.getName());
+				dto.setSource(entity.getSource());
+				dto.setType(entity.getType());
+				lists.add(dto);
+
+			}
+			return lists;
+		} else {
+			System.err.println("data not fond in table");
+		}
+		return Highwayservice.super.findByName(name);
+	}
+
+	@Override
+	public Set<ConstraintViolation<HighwayDTO>> updateAndSave(HighwayDTO hdDto) {
+		ValidatorFactory validationFactory = Validation.buildDefaultValidatorFactory();
+		Validator validator = validationFactory.getValidator();
+		Set<ConstraintViolation<HighwayDTO>> vailations = validator.validate(hdDto);
+		if (vailations != null && !vailations.isEmpty()) {
+			System.out.println("there is vailation in dto");
+			return vailations;
+
+		} else {
+			System.out.println("constraintViolations does not exist,data is good and started to update");
+			HighwayEntity hEntity = new HighwayEntity();
+			hEntity.setDestination(hdDto.getDestination());
+			hEntity.setId(hdDto.getId());
+			hEntity.setKiloMiter(hdDto.getKiloMiter());
+			hEntity.setName(hdDto.getName());
+			hEntity.setSource(hdDto.getSource());
+			hEntity.setType(hdDto.getType());
+			boolean saved = this.repositery.update(hEntity);
+			System.out.println(saved);
+			System.out.println(hEntity);
+			return Collections.emptySet();
+		}
+	}
+	
+	@Override
+	public HighwayDTO deletById(int id) {
+		System.out.println("running in deletById in service");
+		if (id > 0) {
+			HighwayEntity hEntity = this.repositery.deletById(id);
+			if (hEntity != null) {
+				HighwayDTO hdDto = new HighwayDTO();
+				hEntity.setDestination(hdDto.getDestination());
+				hEntity.setId(hdDto.getId());
+				hEntity.setKiloMiter(hdDto.getKiloMiter());
+				hEntity.setName(hdDto.getName());
+				hEntity.setSource(hdDto.getSource());
+				hEntity.setType(hdDto.getType());
+				System.out.println("dto in service"+hdDto);
+				return hdDto;
+			}
+		}
+		return Highwayservice.super.deletById(id);
+	}
 }

@@ -53,16 +53,59 @@ public class HighwayController {
 		model.addAttribute("messages", "Data not saved");
 		return "HighwayInfo";
 	}
+
 	@GetMapping("/find")
-	public String getFind(Model model,@RequestParam int id) {
+	public String getFind(Model model, @RequestParam int id) {
 		System.out.println("Running in find");
-		HighwayDTO hDto=this.highwayservice.findById(id);
+		HighwayDTO hDto = this.highwayservice.findById(id);
 		if (hDto != null) {
 			model.addAttribute("dto", hDto);
 		} else {
 			model.addAttribute("mesage", "Do not found ");
 		}
 		return "HighwaySearch";
+	}
+
+	@GetMapping("/delete")
+	public String deleteBy(Model model, @RequestParam int id) {
+		System.out.println("Running in delete");
+		HighwayDTO hDto = this.highwayservice.deletById(id);
+		if (hDto != null) {
+			System.out.println("dto in controller" + hDto);
+			model.addAttribute("deleted", "Deleted sucessfully");
+		} else {
+			model.addAttribute("delete", "Delete failed ");
+		}
+		return "SearchByName";
+	}
+
+	@GetMapping("/searchByName")
+	public String findByNameOFHighway(Model model, @RequestParam String name) {
+		List<HighwayDTO> hdto = this.highwayservice.findByName(name);
+		model.addAttribute("lists", hdto);
+
+		return "SearchByName";
+	}
+
+	@GetMapping("/update")
+	public String update(Model model, @RequestParam int id) {
+		System.out.println("Running in update get method");
+		HighwayDTO hdto = this.highwayservice.findById(id);
+		model.addAttribute("dto", hdto);
+		model.addAttribute("type", type);
+		return "UpdatePage";
+	}
+
+	@PostMapping("/update")
+	public String onUpdate(Model model, HighwayDTO hdto) {
+		Set<ConstraintViolation<HighwayDTO>> violations = this.highwayservice.updateAndSave(hdto);
+		if (violations.size() > 0) {
+			model.addAttribute("errors", violations);
+		} else {
+			model.addAttribute("message", "Highway updated sucessfully");
+		}
+
+		return "UpdatePage";
 	}
 
 }

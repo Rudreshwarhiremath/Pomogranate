@@ -3,6 +3,7 @@ package com.xworkz.highway.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -10,6 +11,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "highway")
+@NamedQuery(name = "findByName",query = "select str from HighwayEntity str where str.name=:nby")
 public class HighwayEntity {
 	@Id
 	@Column(name = "id")

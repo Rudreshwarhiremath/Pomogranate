@@ -1,8 +1,11 @@
 package com.xworkz.highway.repositery;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -36,6 +39,51 @@ public class HighwayRepositeryImpliment implements HighwayRepositery {
 		HighwayEntity fromDB = em.find(HighwayEntity.class, id);
 		em.close();
 		return fromDB;
+	}
+
+	@Override
+
+	public List<HighwayEntity> findByName(String name) {
+
+		EntityManager em = this.entityManagerFactory.createEntityManager();
+		try {
+			Query query = em.createNamedQuery("findByName");
+			query.setParameter("nby", name);
+			List<HighwayEntity> list = query.getResultList();
+			System.out.println("Total list size found in repo" + list.size());
+			return list;
+		} finally {
+			em.close();
+		}
+	}
+
+	@Override
+	public boolean update(HighwayEntity highwayEntity) {
+		EntityManager em = this.entityManagerFactory.createEntityManager();
+		try {
+			EntityTransaction et = em.getTransaction();
+			et.begin();
+			em.merge(highwayEntity);
+			et.commit();
+			return true;
+		} finally {
+			em.close();
+		}
+
+	}
+
+	@Override
+	public HighwayEntity deletById(int id) {
+		System.out.println("running in deletById in repositery");
+		EntityManager em = this.entityManagerFactory.createEntityManager();
+		try {
+			HighwayEntity entity = em.find(HighwayEntity.class, id);
+			em.remove(entity);
+			System.out.println("entirepositeryty in "+entity);
+			return entity;
+		} finally {
+			em.close();
+		}
 	}
 
 }

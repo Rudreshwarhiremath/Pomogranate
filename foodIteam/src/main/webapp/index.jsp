@@ -19,13 +19,17 @@
 	<!-- As a link -->
 	<nav class="navbar navbar-expand-lg-navbar-Light bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img
+			<a class="navbar-brand" href="#"> <img
 				src=" https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="80" height="48" class="d-inline-block align text-top">
 			</a>
-			<a href="Fooditeams.jsp">food items</a>
+			<h4 style="color: orange;">X-workz it's a beautiful JAVA
+				training institute</h4>
+			<a href="Fooditeams.jsp">food items</a> <a href="Interview.jsp">Interview.
+				</a>
 		</div>
 	</nav>
-	<h1>Running in Bootstrap </h1>
+	<h1>Running in Bootstrap</h1>
+	<img alt="" src="">
 </body>
 </html>

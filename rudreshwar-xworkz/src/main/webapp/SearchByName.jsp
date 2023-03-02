@@ -27,6 +27,8 @@
 		</div>
 	</nav>
 	<h1>Welcome to searchByName Page</h1>
+	<h1 style="color: green;">${deleted}</h1>
+	<h2 style="color: red">${delete}</h2>
 	<form action="searchByName">
 		<input type="search" name="name"> <input type="submit"
 			value="search">
@@ -50,7 +52,7 @@
 				<td>${r.destination}</td>
 				<td>${r.kiloMiter}</td>
 				<td>${r.type}</td>
-				<td> <a href="update?id=${r.id}">edit</a> </td>
+				<td><a href="update?id=${r.id}">edit</a></td>
 				<td><a href="delete?id=${r.id}">delete</a></td>
 			</tr>
 		</c:forEach>

@@ -8,7 +8,7 @@ import com.xworkz.highway.entity.HighwayEntity;
 public interface HighwayRepositery {
 
 	boolean save(HighwayEntity highwayEntity);
-	
+
 	boolean update(HighwayEntity highwayEntity);
 
 	default HighwayEntity findById(int id) {
@@ -18,7 +18,8 @@ public interface HighwayRepositery {
 	default List<HighwayEntity> findByName(String name) {
 		return Collections.emptyList();
 	}
-	default HighwayEntity deletById(int id) {
-		return null;
-	}
+
+	boolean  deletById(int id);
+
+	
 }

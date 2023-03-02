@@ -3,7 +3,7 @@ package ProgramingApti;
 public class primeNumbers {
 
 	public static void main(String[] args) {
-		int n=10;
+		int n=5;
 		int count=0;
 		if(n==0||n==1) {
 			System.out.println("not prime no");

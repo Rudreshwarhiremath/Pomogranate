@@ -1,7 +1,10 @@
 package com.xworkz.spring.boot;
 
-
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class CricketRunner {
@@ -16,15 +19,17 @@ public class CricketRunner {
 
 		runs.forEach((x, y) -> System.out.println(x + "--" + y));
 
-		runs.forEach((m, n) -> {
+		Set<Entry<String, Double>> entry = runs.entrySet();
+		Iterator<Entry<String, Double>> itr = entry.iterator();
+		while (itr.hasNext()) {
+			Entry<String, Double> ent = itr.next();
 
-			if (n < 10000D) {
-			boolean removed=runs.remove(m, n);
-			System.out.println(removed);
+			if (ent.getValue() > 10000) {
+				itr.remove();
 			}
-			System.err.println(m+"--"+n);
-		});
-		
+		}
+		runs.forEach((x, y) -> System.err.println(x + "--" + y));
+
 
 	}
 

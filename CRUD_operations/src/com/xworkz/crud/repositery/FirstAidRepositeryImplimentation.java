@@ -8,7 +8,7 @@ import com.xworkz.crud.dto.FirstAidDto;
 public class FirstAidRepositeryImplimentation implements FirstAidRepositery {
 
 	@Override
-	public boolean save(FirstAidDto firstAidDto) {
+	public boolean save(FirstAidDto firstAidDto) throws  {
 		System.out.println("data starting to save   ");
 		return true;
 	}

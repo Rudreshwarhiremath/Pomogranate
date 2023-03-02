@@ -6,10 +6,11 @@ import com.xworkz.ipl.dto.HelmateDto;
 import com.xworkz.ipl.repository.HelmateRepository;
 
 public class HelmateServiceImpl implements HelmateService {
-	
+
 	private HelmateRepository helmateRepository;
-	public HelmateServiceImpl(HelmateRepository  helmateRepository) {
-		this.helmateRepository=helmateRepository;
+
+	public HelmateServiceImpl(HelmateRepository helmateRepository) {
+		this.helmateRepository = helmateRepository;
 	}
 
 	@Override
@@ -48,15 +49,16 @@ public class HelmateServiceImpl implements HelmateService {
 		} else {
 			System.err.println("price is not  valide-" + price);
 		}
-		if(valideBrand&&valideColor&&validePrice&&valideSize) {
-			System.out.println("Helmate dto is valide can save using repository "+helmateDto);
-			boolean saved=this.helmateRepository.save(helmateDto);
-			System.out.println("Helmate dto is Saved-"+saved);
+		if (valideBrand && valideColor && validePrice && valideSize) {
+			System.out.println("Helmate dto is valide can save using repository " + helmateDto);
+			boolean saved = this.helmateRepository.save(helmateDto);
+			System.out.println("Helmate dto is Saved-" + saved);
 			return saved;
-			
+
 		}
-		System.err.println("Helmate dto is not valide"+helmateDto);
+		System.err.println("Helmate dto is not valide" + helmateDto);
 		return false;
 	}
+
 
 }

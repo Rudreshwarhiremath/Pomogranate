@@ -9,9 +9,11 @@ import javax.validation.ConstraintViolation;
 import com.xworkz.highway.dto.HighwayDTO;
 
 public interface Highwayservice {
+
 	Set<ConstraintViolation<HighwayDTO>> validateAndSave(HighwayDTO hdDto);
+
 	Set<ConstraintViolation<HighwayDTO>> updateAndSave(HighwayDTO hdDto);
-	
+
 	default HighwayDTO findById(int id) {
 		return null;
 	}
@@ -19,7 +21,6 @@ public interface Highwayservice {
 	default List<HighwayDTO> findByName(String name) {
 		return Collections.emptyList();
 	}
-	default HighwayDTO deletById(int id) {
-		return null;
-	}
+
+	boolean deletById(int id);
 }

@@ -11,6 +11,8 @@
 		<lombok.version>1.18.24</lombok.version>
 		<quarkus.version>1.13.7.Final</quarkus.version>
 		<jstl.version>1.2</jstl.version>
+		<hibernate.version>5.6.15.Final</hibernate.version>
+		<mysql.version>8.0.32</mysql.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -22,6 +24,23 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>

@@ -12,8 +12,8 @@ public class FoodWebInit extends AbstractAnnotationConfigDispatcherServletInitia
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		System.out.println("created getRootConfigClasses");
-		Class[] ref = { FoodConfig.class };
-		return ref;
+		//Class[] ref = { FoodConfig.class };
+		return null;
 	}
 
 	@Override

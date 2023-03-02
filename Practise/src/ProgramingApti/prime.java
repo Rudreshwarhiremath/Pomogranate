@@ -16,7 +16,7 @@ public class prime {
 					break;
 				}
 			}
-			if (isprime == 0)
+			if (isprime ==0)
 
 				System.out.println(i + " ");
 		}

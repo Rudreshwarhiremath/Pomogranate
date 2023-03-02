@@ -69,9 +69,9 @@ public class HighwayController {
 	@GetMapping("/delete")
 	public String deleteBy(Model model, @RequestParam int id) {
 		System.out.println("Running in delete");
-		HighwayDTO hDto = this.highwayservice.deletById(id);
-		if (hDto != null) {
-			System.out.println("dto in controller" + hDto);
+		 this.highwayservice.deletById(id);
+		if (id> 0) {
+			System.out.println("dto in controller" + id);
 			model.addAttribute("deleted", "Deleted sucessfully");
 		} else {
 			model.addAttribute("delete", "Delete failed ");

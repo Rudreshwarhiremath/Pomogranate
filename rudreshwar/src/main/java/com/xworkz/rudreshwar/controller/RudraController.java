@@ -25,42 +25,42 @@ public class RudraController {
 	public String getEmail(Model model) {
 		System.out.println("Running in email");
 		model.addAttribute("email", "Rudreshwarhiremath@gmail.com");
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeMobile")
 	public String getMobile(Model model) {
 		System.out.println("Running in Mobile");
 		model.addAttribute("mobile", "8088928928");
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeAdhar")
 	public String getAdhar(Model model) {
 		System.out.println("Running in Adhar");
 		model.addAttribute("adhar", "622873500368");
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeAge")
 	public String getAge(Model model) {
 		System.out.println("Running in Age");
 		model.addAttribute("age", "23");
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeDob")
 	public String getDOB(Model model) {
 		System.out.println("Running in dateofbirth");
 		model.addAttribute("birth", LocalDate.of(1999,11,26).atTime(9,50,59));
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeDS")
 	public String getDesiredSallery(Model model) {
 		System.out.println("Running in DesiredSallery");
 		model.addAttribute("sallery", "5.5LPA");
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeBestFriendsList")
@@ -73,7 +73,7 @@ public class RudraController {
 		ref.add("Akhilesh");
 		ref.add("God");
 		model.addAttribute("bfl", ref);
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeMVP")
@@ -86,7 +86,7 @@ public class RudraController {
 		ref.add("Cloth Shop");
 		ref.add("Saloon");
 		model.addAttribute("mvp", ref);
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeSkillSet")
@@ -99,7 +99,7 @@ public class RudraController {
 		ref.add("CSS ");
 		ref.add("SPRING");
 		model.addAttribute("skills", ref);
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeEdto")
@@ -117,7 +117,7 @@ public class RudraController {
 		dto.setState("Karnataka");
 		dto.setTaluk("Basavakalyan");
 		model.addAttribute("edto", dto);
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeFamily")
@@ -136,7 +136,7 @@ public class RudraController {
 		dto.setVegeterin(true);
 
 		model.addAttribute("fdto", dto);
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/takeMobileInfo")
@@ -149,7 +149,7 @@ public class RudraController {
 		dto.setPrice(13000D);
 		dto.setStorage(128D);
 		model.addAttribute("mdto", dto);
-		return "index.jsp";
+		return "index";
 	}
 	@GetMapping("/takeBeverage")
 	public String getBeverage(Model model) {
@@ -164,7 +164,7 @@ public class RudraController {
 		dto.setJuise7("Papya");
 		dto.setJuise8("Grapes");
 		model.addAttribute("bdto",dto);
-		return "index.jsp";
+		return "index";
 	}
 	@GetMapping("/takeChata")
 	public String getChat(Model model) {
@@ -182,7 +182,7 @@ public class RudraController {
 		dto.setChat10("Katlis");
 		dto.setChat11("What you want order");
 		model.addAttribute("cdto",dto);
-		return "index.jsp";
+		return "index";
 	}
 
 }

@@ -6,7 +6,7 @@ public class Milk {
 	public String name;//
 	public double quantity;// ref
 	public double price;// method
-	public String milkproducts = "Halu";// litrellal
+	public String milkproducts = "Halu";// literal
 	public static String farmHouse;// static
 	public Brand brand=Brand.NANDINI;
 

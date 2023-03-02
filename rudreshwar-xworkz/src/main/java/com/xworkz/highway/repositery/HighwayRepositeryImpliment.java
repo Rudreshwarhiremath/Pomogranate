@@ -73,14 +73,17 @@ public class HighwayRepositeryImpliment implements HighwayRepositery {
 	}
 
 	@Override
-	public HighwayEntity deletById(int id) {
+	public boolean deletById(int id) {
 		System.out.println("running in deletById in repositery");
 		EntityManager em = this.entityManagerFactory.createEntityManager();
 		try {
-			HighwayEntity entity = em.find(HighwayEntity.class, id);
-			em.remove(entity);
-			System.out.println("entirepositeryty in "+entity);
-			return entity;
+			EntityTransaction et = em.getTransaction();
+			et.begin();
+			HighwayEntity hEntity = em.find(HighwayEntity.class, id);
+			em.remove(hEntity);
+			System.out.println("entirepositeryty in " + hEntity);
+			et.commit();
+			return true;
 		} finally {
 			em.close();
 		}

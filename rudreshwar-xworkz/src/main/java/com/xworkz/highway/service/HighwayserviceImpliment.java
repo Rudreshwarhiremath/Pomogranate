@@ -118,24 +118,14 @@ public class HighwayserviceImpliment implements Highwayservice {
 			return Collections.emptySet();
 		}
 	}
-	
+
 	@Override
-	public HighwayDTO deletById(int id) {
+	public boolean deletById(int id) {
 		System.out.println("running in deletById in service");
 		if (id > 0) {
-			HighwayEntity hEntity = this.repositery.deletById(id);
-			if (hEntity != null) {
-				HighwayDTO hdDto = new HighwayDTO();
-				hEntity.setDestination(hdDto.getDestination());
-				hEntity.setId(hdDto.getId());
-				hEntity.setKiloMiter(hdDto.getKiloMiter());
-				hEntity.setName(hdDto.getName());
-				hEntity.setSource(hdDto.getSource());
-				hEntity.setType(hdDto.getType());
-				System.out.println("dto in service"+hdDto);
-				return hdDto;
-			}
+			this.repositery.deletById(id);
 		}
-		return Highwayservice.super.deletById(id);
+		return true;
+
 	}
 }

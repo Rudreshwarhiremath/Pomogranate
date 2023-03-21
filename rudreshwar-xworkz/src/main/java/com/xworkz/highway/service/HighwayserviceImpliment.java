@@ -10,6 +10,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,54 +18,52 @@ import com.xworkz.highway.dto.HighwayDTO;
 import com.xworkz.highway.entity.HighwayEntity;
 import com.xworkz.highway.repositery.HighwayRepositery;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class HighwayserviceImpliment implements Highwayservice {
 	@Autowired
 	private HighwayRepositery repositery;
 
 	public HighwayserviceImpliment() {
-		System.out.println("Running in highwayService");
+		log.info("Running in highwayService");
 	}
 
 	@Override
 	public Set<ConstraintViolation<HighwayDTO>> validateAndSave(HighwayDTO hdDto) {
-		ValidatorFactory validationFactory = Validation.buildDefaultValidatorFactory();
-		Validator validator = validationFactory.getValidator();
-		Set<ConstraintViolation<HighwayDTO>> vailation = validator.validate(hdDto);
+		Set<ConstraintViolation<HighwayDTO>> vailation = validate(hdDto);
 		if (vailation != null && !vailation.isEmpty()) {
-			System.out.println("there is vailation in dto");
+			log.info("there is vailation in dto");
 			return vailation;
 
 		} else {
-			System.out.println("constraintViolations does not exist,data is good");
+			log.info("constraintViolations does not exist,data is good");
 			HighwayEntity hEntity = new HighwayEntity();
-			hEntity.setDestination(hdDto.getDestination());
-			hEntity.setId(hdDto.getId());
-			hEntity.setKiloMiter(hdDto.getKiloMiter());
-			hEntity.setName(hdDto.getName());
-			hEntity.setSource(hdDto.getSource());
-			hEntity.setType(hdDto.getType());
+			BeanUtils.copyProperties(hdDto, hEntity);
 			boolean saved = this.repositery.save(hEntity);
-			System.out.println(saved);
-			System.out.println(hEntity);
+			log.info("" + saved);
+			log.info("" + hEntity);
 			return Collections.emptySet();
 		}
 
 	}
 
+	private Set<ConstraintViolation<HighwayDTO>> validate(HighwayDTO hdDto) {
+		ValidatorFactory validationFactory = Validation.buildDefaultValidatorFactory();
+		Validator validator = validationFactory.getValidator();
+		Set<ConstraintViolation<HighwayDTO>> vailation = validator.validate(hdDto);
+		return vailation;
+	}
+
 	@Override
 	public HighwayDTO findById(int id) {
-		System.out.println("running in findById in service");
+		log.info("running in findById in service");
 		if (id > 0) {
 			HighwayEntity hEntity = this.repositery.findById(id);
 			if (hEntity != null) {
 				HighwayDTO hdDto = new HighwayDTO();
-				hdDto.setDestination(hEntity.getDestination());
-				hdDto.setId(hEntity.getId());
-				hdDto.setKiloMiter(hEntity.getKiloMiter());
-				hdDto.setName(hEntity.getName());
-				hdDto.setSource(hEntity.getSource());
-				hdDto.setType(hEntity.getType());
+				BeanUtils.copyProperties(hEntity, hdDto);
 				return hdDto;
 			}
 		}
@@ -78,12 +77,7 @@ public class HighwayserviceImpliment implements Highwayservice {
 			List<HighwayDTO> lists = new ArrayList<HighwayDTO>();
 			for (HighwayEntity entity : hentity) {
 				HighwayDTO dto = new HighwayDTO();
-				dto.setDestination(entity.getDestination());
-				dto.setId(entity.getId());
-				dto.setKiloMiter(entity.getKiloMiter());
-				dto.setName(entity.getName());
-				dto.setSource(entity.getSource());
-				dto.setType(entity.getType());
+				BeanUtils.copyProperties(entity, dto);
 				lists.add(dto);
 
 			}
@@ -96,36 +90,42 @@ public class HighwayserviceImpliment implements Highwayservice {
 
 	@Override
 	public Set<ConstraintViolation<HighwayDTO>> updateAndSave(HighwayDTO hdDto) {
-		ValidatorFactory validationFactory = Validation.buildDefaultValidatorFactory();
-		Validator validator = validationFactory.getValidator();
-		Set<ConstraintViolation<HighwayDTO>> vailations = validator.validate(hdDto);
+		Set<ConstraintViolation<HighwayDTO>> vailations = validate(hdDto);
 		if (vailations != null && !vailations.isEmpty()) {
-			System.out.println("there is vailation in dto");
+			log.info("there is vailation in dto");
 			return vailations;
 
 		} else {
-			System.out.println("constraintViolations does not exist,data is good and started to update");
+			log.info("constraintViolations does not exist,data is good and started to update");
 			HighwayEntity hEntity = new HighwayEntity();
-			hEntity.setDestination(hdDto.getDestination());
-			hEntity.setId(hdDto.getId());
-			hEntity.setKiloMiter(hdDto.getKiloMiter());
-			hEntity.setName(hdDto.getName());
-			hEntity.setSource(hdDto.getSource());
-			hEntity.setType(hdDto.getType());
+			BeanUtils.copyProperties(hdDto, hEntity);
 			boolean saved = this.repositery.update(hEntity);
-			System.out.println(saved);
-			System.out.println(hEntity);
+			log.info("" + saved);
+			log.info("" + hEntity);
 			return Collections.emptySet();
 		}
 	}
 
 	@Override
 	public boolean deletById(int id) {
-		System.out.println("running in deletById in service");
+		log.info("running in deletById in service");
 		if (id > 0) {
 			this.repositery.deletById(id);
 		}
 		return true;
 
+	}
+
+	@Override
+	public List<HighwayDTO> findAll() {
+		List<HighwayEntity> hentity = this.repositery.findAll();
+		List<HighwayDTO> lists = new ArrayList<HighwayDTO>();
+		for (HighwayEntity entity : hentity) {
+			HighwayDTO dto = new HighwayDTO();
+			BeanUtils.copyProperties(entity, dto);
+			lists.add(dto);
+
+		}
+		return lists;
 	}
 }

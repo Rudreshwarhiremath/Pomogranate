@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,12 +21,10 @@
 			<a class="navbar-brand" href="#"> <img
 				src=" https://x-workz.in/static/media/Logo.cf195593dc1b3f921369.png"
 				alt="" width="80" height="48" class="d-inline-block align text-top">
-			</a> <a href="highway">Highwayinfo</a>
-			<a href="SearchByName.jsp">SearchByName</a>
-			<a href="ImageUpload.jsp">ImageUpload</a>
-			<a href="DownloadImage.jsp">DownloadImage</a>
+			</a> <a href="highway">Highwayinfo</a> <a href="SearchByName.jsp">SearchByName</a>
 		</div>
 	</nav>
-<a href="findall.jsp">FindAll Page</a>
+<h1>Display Image</h1>
+<img src="download?fileName=Screenshot.jpg" height="350" width="175">
 </body>
 </html>

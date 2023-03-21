@@ -1,3 +1,4 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.xworkz</groupId>
@@ -11,6 +12,7 @@
 		<jstl.version>1.2</jstl.version>
 		<hibernate.version>5.6.15.Final</hibernate.version>
 		<mysql.version>8.0.32</mysql.version>
+		    <slf4j.version>1.7.25</slf4j.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,6 +60,22 @@
 			<artifactId>quarkus-hibernate-validator</artifactId>
 			<version>${quarkus.version}</version>
 		</dependency>
+		        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 	</dependencies>
   <build>
     <plugins>

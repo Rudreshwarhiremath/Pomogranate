@@ -26,6 +26,7 @@
 			</a> <a href="index.jsp">Homepage</a> <a href="HighwaySearch.jsp">Search
 				page</a> <a href="SearchByName.jsp">Search By name page</a>
 		</div>
+		
 	</nav>
 	<h1 style="color: green;">${message}</h1>
 	<h2 style="color: red">${messages}</h2>

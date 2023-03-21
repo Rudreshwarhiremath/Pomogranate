@@ -20,6 +20,8 @@ public interface HighwayRepositery {
 	}
 
 	boolean  deletById(int id);
-
+	default List<HighwayEntity> findAll() {
+		return Collections.emptyList();
+	}
 	
 }

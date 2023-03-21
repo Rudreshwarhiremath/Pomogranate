@@ -17,31 +17,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.xworkz.highway.dto.HighwayDTO;
 import com.xworkz.highway.service.Highwayservice;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/")
+@Slf4j
 public class HighwayController {
 	@Autowired
 	private Highwayservice highwayservice;
 
 	public HighwayController() {
-		System.out.println("Running in controller");
+		log.info("Running in controller");
 	}
 
-	private List<String> type = Arrays.asList("NH", "SH", "DH", "Normal");
+	private List<String> type = Arrays.asList("ExcepressWay","NH", "SH", "DH", "Normal");
 
 	@GetMapping("/highway")
 	public String getList(Model model) {
-		System.out.println("Running in gettMapping");
+		log.info("Running in gettMapping");
 		model.addAttribute("type", type);
 		return "HighwayInfo";
 	}
 
 	@PostMapping("/highway")
 	public String getResult(Model model, HighwayDTO hDto) {
-		System.out.println("Running in postMapping");
+		log.info("Running in postMapping");
 		Set<ConstraintViolation<HighwayDTO>> violations = this.highwayservice.validateAndSave(hDto);
 		if (violations.isEmpty()) {
-			System.out.println(" no Violation in controller");
+			log.info(" no Violation in controller");
 			model.addAttribute("message", "Data Saved Sucessfully");
 			model.addAttribute("type", type);
 			model.addAttribute("message", "Data saved sucessfully");
@@ -56,7 +59,7 @@ public class HighwayController {
 
 	@GetMapping("/find")
 	public String getFind(Model model, @RequestParam int id) {
-		System.out.println("Running in find");
+		log.info("Running in find");
 		HighwayDTO hDto = this.highwayservice.findById(id);
 		if (hDto != null) {
 			model.addAttribute("dto", hDto);
@@ -68,10 +71,10 @@ public class HighwayController {
 
 	@GetMapping("/delete")
 	public String deleteBy(Model model, @RequestParam int id) {
-		System.out.println("Running in delete");
+		log.info("Running in delete");
 		 this.highwayservice.deletById(id);
 		if (id> 0) {
-			System.out.println("dto in controller" + id);
+			log.info("dto in controller" + id);
 			model.addAttribute("deleted", "Deleted sucessfully");
 		} else {
 			model.addAttribute("delete", "Delete failed ");
@@ -89,7 +92,7 @@ public class HighwayController {
 
 	@GetMapping("/update")
 	public String update(Model model, @RequestParam int id) {
-		System.out.println("Running in update get method");
+		log.info("Running in update get method");
 		HighwayDTO hdto = this.highwayservice.findById(id);
 		model.addAttribute("dto", hdto);
 		model.addAttribute("type", type);
@@ -106,6 +109,13 @@ public class HighwayController {
 		}
 
 		return "UpdatePage";
+	}
+	@GetMapping("/findLists")
+	public String findAll(Model model) {
+		List<HighwayDTO> dtoList=this.highwayservice.findAll();
+		model.addAttribute("lists",dtoList);
+		log.info(""+dtoList.size());
+		return "findall";
 	}
 
 }

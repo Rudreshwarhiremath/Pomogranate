@@ -12,33 +12,44 @@ import org.springframework.stereotype.Repository;
 
 import com.xworkz.highway.entity.HighwayEntity;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Repository
+@Slf4j
 public class HighwayRepositeryImpliment implements HighwayRepositery {
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
 
 	public HighwayRepositeryImpliment() {
-		System.out.println("created " + this.getClass().getSimpleName());
+		log.info("created " + this.getClass().getSimpleName());
 	}
 
 	@Override
 	public boolean save(HighwayEntity highwayEntity) {
 		EntityManager em = this.entityManagerFactory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		em.persist(highwayEntity);
-		transaction.commit();
-		em.close();
-		return true;
+		try {
+			EntityTransaction transaction = em.getTransaction();
+			transaction.begin();
+			em.persist(highwayEntity);
+			transaction.commit();
+			return true;
+		} finally {
+			em.close();
+		}
+
 	}
 
 	@Override
 	public HighwayEntity findById(int id) {
-		System.out.println("running in findById in repositery");
+		log.info("running in findById in repositery");
 		EntityManager em = this.entityManagerFactory.createEntityManager();
-		HighwayEntity fromDB = em.find(HighwayEntity.class, id);
-		em.close();
-		return fromDB;
+		try {
+			HighwayEntity fromDB = em.find(HighwayEntity.class, id);
+			return fromDB;
+		} finally {
+			em.close();
+		}
+
 	}
 
 	@Override
@@ -50,7 +61,7 @@ public class HighwayRepositeryImpliment implements HighwayRepositery {
 			Query query = em.createNamedQuery("findByName");
 			query.setParameter("nby", name);
 			List<HighwayEntity> list = query.getResultList();
-			System.out.println("Total list size found in repo" + list.size());
+			log.info("Total list size found in repo" + list.size());
 			return list;
 		} finally {
 			em.close();
@@ -74,16 +85,29 @@ public class HighwayRepositeryImpliment implements HighwayRepositery {
 
 	@Override
 	public boolean deletById(int id) {
-		System.out.println("running in deletById in repositery");
+		log.info("running in deletById in repositery");
 		EntityManager em = this.entityManagerFactory.createEntityManager();
 		try {
 			EntityTransaction et = em.getTransaction();
 			et.begin();
 			HighwayEntity hEntity = em.find(HighwayEntity.class, id);
 			em.remove(hEntity);
-			System.out.println("entirepositeryty in " + hEntity);
+			log.info("entirepositeryty in " + hEntity);
 			et.commit();
 			return true;
+		} finally {
+			em.close();
+		}
+	}
+
+	@Override
+	public List<HighwayEntity> findAll() {
+		EntityManager em = this.entityManagerFactory.createEntityManager();
+		try {
+			Query query = em.createNamedQuery("find");
+			List<HighwayEntity> list = query.getResultList();
+			log.info("Total list size found in repo" + list.size());
+			return list;
 		} finally {
 			em.close();
 		}

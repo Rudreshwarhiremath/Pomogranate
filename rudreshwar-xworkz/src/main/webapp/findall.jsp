@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +25,38 @@
 				alt="" width="80" height="48" class="d-inline-block align text-top">
 			</a> <a href="highway">Highwayinfo</a>
 			<a href="SearchByName.jsp">SearchByName</a>
-			<a href="ImageUpload.jsp">ImageUpload</a>
-			<a href="DownloadImage.jsp">DownloadImage</a>
+			<a href="index.jsp">Homepage</a>
 		</div>
 	</nav>
-<a href="findall.jsp">FindAll Page</a>
+</head>
+<body>
+<a href="findLists">FindAll</a>
+	<table class="table table-dark table-hover">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Source</th>
+			<th>Destination</th>
+			<th>KiloMiter</th>
+			<th>Type</th>
+			<th>edit</th>
+			<th>delete</th>
+		</tr>
+		<c:forEach items="${lists}" var="r">
+			<tr>
+				<td>${r.id}</td>
+				<td>${r.name}</td>
+				<td>${r.source}</td>
+				<td>${r.destination}</td>
+				<td>${r.kiloMiter}</td>
+				<td>${r.type}</td>
+				<td><a href="update?id=${r.id}">edit</a></td>
+				<td><a href="delete?id=${r.id}">delete</a></td>
+			</tr>
+		</c:forEach>
+
+	</table>
+
+
 </body>
 </html>

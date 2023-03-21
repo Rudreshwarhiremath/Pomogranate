@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 @Table(name = "highway")
 @NamedQuery(name = "findByName",query = "select str from HighwayEntity str where str.name=:nby")
-@NamedQuery(name = "deletBy",query = "select ent from HighwayEntity ent where ent.id=:iby")
+@NamedQuery(name = "find",query = "select ent from HighwayEntity ent")
 public class HighwayEntity {
 	@Id
 	@Column(name = "id")

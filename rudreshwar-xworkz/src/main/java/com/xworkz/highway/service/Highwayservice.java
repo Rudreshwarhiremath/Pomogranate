@@ -21,6 +21,9 @@ public interface Highwayservice {
 	default List<HighwayDTO> findByName(String name) {
 		return Collections.emptyList();
 	}
+	default List<HighwayDTO> findAll() {
+		return Collections.emptyList();
+	}
 
 	boolean deletById(int id);
 }

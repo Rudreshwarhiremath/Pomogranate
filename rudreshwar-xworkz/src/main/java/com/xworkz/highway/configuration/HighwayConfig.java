@@ -30,8 +30,7 @@ public class HighwayConfig {
 	@Bean
 	@Order(1)
 	public ViewResolver viewResolver() {
-		log.info("Running in viewresolwer");
-		return new InternalResourceViewResolver("/", ".jsp");
+		return new InternalResourceViewResolver("/",".jsp");
 	}
 
 	@Bean

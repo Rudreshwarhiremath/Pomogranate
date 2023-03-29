@@ -30,5 +30,6 @@
 		</div>
 	</nav>
 <a href="findall.jsp">FindAll Page</a>
+<a href="AjaxTrail.jsp">AjaxTrail Page</a>
 </body>
 </html>

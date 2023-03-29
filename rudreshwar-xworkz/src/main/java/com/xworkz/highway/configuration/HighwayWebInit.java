@@ -6,10 +6,13 @@ import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import lombok.extern.slf4j.Slf4j;
+
+
 @Slf4j
 public class HighwayWebInit extends AbstractAnnotationConfigDispatcherServletInitializer implements WebMvcConfigurer {
 
@@ -30,7 +33,6 @@ public class HighwayWebInit extends AbstractAnnotationConfigDispatcherServletIni
 		log.info("Running in  getServletMappings");
 		return new String[] { "/" };
 	}
-
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		// TODO Auto-generated method stub
@@ -45,7 +47,7 @@ public class HighwayWebInit extends AbstractAnnotationConfigDispatcherServletIni
 		MultipartConfigElement multipartConfigElement = new MultipartConfigElement(uploadDirectory.getAbsolutePath(),
 				maxUploadSizeInMb, maxUploadSizeInMb * 2, maxUploadSizeInMb / 2);
 		registration.setMultipartConfig(multipartConfigElement);
-		
+
 	}
 
 }
